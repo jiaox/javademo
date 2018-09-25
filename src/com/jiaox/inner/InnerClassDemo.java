@@ -2,11 +2,11 @@ package com.jiaox.inner;
 
 public class InnerClassDemo {
 	public static void main(String[] args) {
-//		Outer.Inner in = new Outer().new Inner();//这种方式可以，但是有点危险，应该封装。
-//		in.show();
+		Outer.Inner in = new Outer().new Inner();//这种方式可以，但是有点危险，应该封装。
+		in.show();
 //		Outer.Inner2 in2 =new Outer.Inner2();
 //		in2.show();
-		Outer.Inner3.show();
+//		Outer.Inner3.show();
 	}
 }
 /**
@@ -40,8 +40,9 @@ class Outer {
 	// 内部类
 	class Inner {
 		void show() {
-			// int num=6;
-			System.out.println("num=" + num);//等价于System.out.println("num=" + Outer.this.num);
+			 int num=7;
+			System.out.println("num=" + num);//如果没有局部同名变量则等价于System.out.println("num=" + Outer.this.num);
+			 System.out.println("num=" + Outer.this.num);
 		}
 	}
 	
