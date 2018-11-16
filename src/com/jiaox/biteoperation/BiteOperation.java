@@ -1,7 +1,5 @@
 package com.jiaox.biteoperation;
 
-import com.jiaox.thread.DemoThread;
-import com.sun.corba.se.impl.orb.ParserTable.TestORBInitializer1;
 
 /**
  * 位运算练习
@@ -20,7 +18,8 @@ public class BiteOperation {
 		System.out.println(6^3^3);//
 		System.out.println(~6);//反码
 		
-		biteOpDemo1();
+//		biteOpDemo1();
+		biteOpDemo2();
 	}
 	
 	/**
@@ -36,7 +35,12 @@ public class BiteOperation {
 	 * 对两个整数变量的值进行互换（不需第三变量）
 	 */
 	public static void biteOpDemo2(){
-		
+				int a =3,b=4;
+				System.out.println("a="+a+"b="+b);
+				a = a^b; 
+				b = a^b; 
+				a = a^b;
+				System.out.println("a="+a+"b="+b);
 	}
 	
 }

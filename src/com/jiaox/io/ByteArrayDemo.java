@@ -15,10 +15,14 @@ public class ByteArrayDemo {
 	public static void main(String[] args) {
 		String tmp = "abcdefghijklmnopqrstuvwxyz";
 		byte[] src = tmp.getBytes();
+		for(byte b:src){
+			System.out.println(b);
+		}
 		ByteArrayInputStream input= new ByteArrayInputStream(src);
 		ByteArrayOutputStream output = new ByteArrayOutputStream();
 		new ByteArrayDemo().transform(input, output);
 		byte[] result=output.toByteArray(); //result 为转换后的内存块
+		System.out.println("-----------------");
 		System.out.println(new String(result));
 	}
 	

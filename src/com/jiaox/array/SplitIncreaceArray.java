@@ -16,6 +16,16 @@ public class SplitIncreaceArray {
 	
 	public static void main(String[] args) {
 		int[] arr = {1,434,234,12,25,37,19,390,88,78,100,1234,33,456};
+		int index=0;
+		int len =1;
+		
+		while((index+len)<arr.length){
+			index=index+len;
+			++len;
+		}
+		System.out.println( index);
+		System.out.println(len);
+		
 	}
 	
 	//

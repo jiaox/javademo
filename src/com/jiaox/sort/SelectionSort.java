@@ -12,7 +12,7 @@ public class SelectionSort {
 			4,8,6,5,1,3,9	
 		};
 		
-	    sort(arr);
+	    sort2(arr);
 		
 		
 	}
@@ -53,8 +53,13 @@ public class SelectionSort {
 				}
 			}
 			if(index!=x){
+				int temp =arr[x];
+				arr[x]=num;
+				arr[index]=temp;
 			}
 		}
+		
+		printArray(arr);
 	}
 	
 	

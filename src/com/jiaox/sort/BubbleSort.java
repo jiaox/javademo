@@ -21,12 +21,15 @@ public class BubbleSort {
 	 * @param arr
 	 */
 	public static void sort(int[] arr){
+		int count=1;
 		for(int x=0;x<arr.length;x++){
 			for(int y=0;y<arr.length-x-1;y++){
 				if(arr[y]>arr[y+1]){
 					int temp =arr[y];
 					arr[y]=arr[y+1];
 					arr[y+1] = temp;
+					System.out.println("第"+count++ +"次排序:"+Arrays.toString(arr));
+					
 				}
 			}
 		}

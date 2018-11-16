@@ -30,11 +30,16 @@ public class HeapSortTest {
         }  
     }  
   
+    /**
+     *
+     * @param data
+     * @param lastIndex
+     */
     public static void createMaxdHeap(int[] data, int lastIndex) {  
         for (int i = (lastIndex - 1) / 2; i >= 0; i--) {  
             // 保存当前正在判断的节点  
             int k = i;  
-            // 若当前节点的子节点存在  
+            // 若当前节点的子节点存在  （2k+1为左子节点，2k+2为右子节点）
             while (2 * k + 1 <= lastIndex) {  
                 // biggerIndex总是记录较大节点的值,先赋值为当前判断节点的左子节点  
                 int biggerIndex = 2 * k + 1;  

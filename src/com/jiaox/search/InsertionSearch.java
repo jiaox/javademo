@@ -31,6 +31,6 @@ public class InsertionSearch {
 	
 	public static void main(String[] args) {
 		int[] arr = { 7, 13, 35, 80, 93, 99, 180, 561 };
-		System.out.println("插值查找，索引："+insertionSearch(arr, 93, 0, arr.length - 1));
+		System.out.println("插值查找，索引为："+insertionSearch(arr, 93, 0, arr.length - 1));
 	}
 }
