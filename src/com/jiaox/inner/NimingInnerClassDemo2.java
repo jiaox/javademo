@@ -20,7 +20,6 @@ public class NimingInnerClassDemo2 {
 //       new Inner().show();//失败的，因为要调用inner 需要外部类的this引用，因为Inner是一个非静态成员，需要被对象调用。
 		//可是 main函数式静态的，静态只能访问静态成员。所以被静态方法直接访问的内部类，也必须是静态的
 		method(new Inter() {
-			@Override
 			public void show() {
 				System.out.println("show run");
 			}

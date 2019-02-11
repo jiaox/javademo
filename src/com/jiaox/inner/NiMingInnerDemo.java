@@ -14,7 +14,6 @@ interface Inter2{
 class Outer5{
 	public static Inter2 method(){
 		return new Inter2() {
-			@Override
 			public void show() {
 				System.out.println("inner ---- show 調用");
 			}

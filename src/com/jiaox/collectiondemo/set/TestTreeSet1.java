@@ -100,7 +100,6 @@ class Person2 implements Comparable{
 		this.age = age;
 	}
 
-	@Override
 	public int compareTo(Object o) {
 		Person2 p=(Person2)o;
 		int num=this.name.compareTo(p.name);//首先按姓名排序
