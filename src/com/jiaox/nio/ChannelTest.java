@@ -77,7 +77,7 @@ public class ChannelTest {
 		FileChannel outChannel = FileChannel.open(Paths.get("E:\\2.png"), StandardOpenOption.READ, StandardOpenOption.WRITE,StandardOpenOption.CREATE);
 		//得到直接缓冲区
 		MappedByteBuffer inMappedByteBuffer = inChannel.map(MapMode.READ_ONLY, 0, inChannel.size());
-		MappedByteBuffer outMappedByteBuffer = outChannel.map(MapMode.READ_WRITE, 0, inChannel.size());
+		MappedByteBuffer outMappedByteBuffer = outChannel.map(MapMode.READ_WRITE, 0, outChannel.size());
 		byte[] buffer = new byte[inMappedByteBuffer.limit()];
 		inMappedByteBuffer.get(buffer);
 		outMappedByteBuffer.put(buffer);
