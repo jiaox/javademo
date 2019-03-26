@@ -19,19 +19,19 @@ public class WorkerPoolTest {
         ThreadFactory threadFactory = Executors.defaultThreadFactory();
         //creating the ThreadPoolExecutor 创建一个线程池，初始线程池大小设为2、最大值设为4、工作队列大小设为2。
         //ThreadPoolExecutor 继承自 AbstractExecutorService
-        ThreadPoolExecutor executorPool = new ThreadPoolExecutor(2, 4, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), threadFactory, rejectionHandler);
+        ThreadPoolExecutor poolExecutor = new ThreadPoolExecutor(2, 4, 10, TimeUnit.SECONDS, new ArrayBlockingQueue<Runnable>(2), threadFactory, rejectionHandler);
         //start the monitoring thread 创建监控线程
-        MyMonitorThread monitor = new MyMonitorThread(executorPool, 3);
+        MyMonitorThread monitor = new MyMonitorThread(poolExecutor, 3);
         Thread monitorThread = new Thread(monitor);
         monitorThread.start();
         //submit work to the thread pool 将线程提交给线程池
         for(int i=0; i<10; i++){
-            executorPool.execute(new WorkerThread("cmd"+i));
+            poolExecutor.execute(new WorkerThread("cmd"+i));
         }
         System.out.println("-----当前线程"+Thread.currentThread().getName());
         Thread.sleep(30000);
         //shut down the pool
-        executorPool.shutdown();
+        poolExecutor.shutdown();
         //shut down the monitor thread
         System.out.println("-----当前线程2"+Thread.currentThread().getName());
         Thread.sleep(5000);
